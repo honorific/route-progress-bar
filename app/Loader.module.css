@@ -1,5 +1,8 @@
 .loader {
   animation-duration: 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: none;
+  animation-play-state: running;
   animation-name: strechWidth;
   height: 3px;
   background-color: red;
@@ -8,6 +11,7 @@
   z-index: 2;
   position: absolute;
   top: 0;
+  left: 0;
 }
 @keyframes strechWidth {
   from {
