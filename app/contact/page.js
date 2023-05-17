@@ -1,5 +1,14 @@
+'use client'
+import {useEffect, useState} from 'react'
+
 const contact = () => {
-  return <div>contact</div>
+  const [content, setContent] = useState('')
+  useEffect(() => {
+    setTimeout(() => {
+      setContent('Contact')
+    }, 1000)
+  }, [])
+  return <h1>{content}</h1>
 }
 
 export default contact

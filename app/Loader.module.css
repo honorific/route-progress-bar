@@ -1,0 +1,17 @@
+.loader {
+  animation-duration: 3s;
+  animation-name: strechWidth;
+  height: 3px;
+  background-color: red;
+  margin: 0;
+  padding: 0;
+}
+@keyframes strechWidth {
+  from {
+    width: 0%;
+  }
+
+  to {
+    width: 100%;
+  }
+}

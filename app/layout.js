@@ -1,4 +1,8 @@
+'use client'
 import {Inter} from 'next/font/google'
+import {usePathname, useSearchParams} from 'next/navigation'
+import {Suspense, useEffect, useState} from 'react'
+import Loader from './Loader'
 
 const inter = Inter({subsets: ['latin']})
 
@@ -8,9 +12,17 @@ export const metadata = {
 }
 
 export default function RootLayout({children}) {
+  const [content, setContent] = useState('')
+  const pathname = usePathname()
+  const searchParams = useSearchParams()
+  useEffect(() => {
+    setContent(children)
+  }, [pathname, searchParams])
   return (
     <html lang='en'>
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <Suspense fallback={<Loader />}>{content}</Suspense>
+      </body>
     </html>
   )
 }
