@@ -10,6 +10,9 @@ export default function Home() {
       <Link href='/contact' className={styles.menu}>
         Contact
       </Link>
+      <Link href='/shop' className={styles.menu}>
+        shop
+      </Link>
       <div>Home page</div>
     </>
   )

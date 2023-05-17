@@ -12,16 +12,17 @@ export const metadata = {
 }
 
 export default function RootLayout({children}) {
-  const [content, setContent] = useState('')
+  //const [content, setContent] = useState('')
   const pathname = usePathname()
   const searchParams = useSearchParams()
   useEffect(() => {
-    setContent(children)
+    //setContent(children)
+    console.log('children is: ', children)
   }, [pathname, searchParams])
   return (
     <html lang='en'>
       <body className={inter.className}>
-        <Suspense fallback={<Loader />}>{content}</Suspense>
+        <Suspense fallback={<Loader />}>{children}</Suspense>
       </body>
     </html>
   )

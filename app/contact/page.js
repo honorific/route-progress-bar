@@ -1,14 +1,17 @@
 'use client'
-import {useEffect, useState} from 'react'
+import {Suspense, lazy} from 'react'
+import Loader from '../Loader'
+const Posts = lazy(() => import('../Posts'))
 
 const contact = () => {
-  const [content, setContent] = useState('')
-  useEffect(() => {
-    setTimeout(() => {
-      setContent('Contact')
-    }, 1000)
-  }, [])
-  return <h1>{content}</h1>
+  return (
+    <div>
+      <h1>Contact</h1>
+      <Suspense fallback={<Loader />}>
+        <Posts />
+      </Suspense>
+    </div>
+  )
 }
 
 export default contact
